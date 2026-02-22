@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\hivsim.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\hivsim.dir/objects.a @CMakeFiles\hivsim.dir\objects1.rsp
+C:\msys64\mingw64\bin\c++.exe -shared -o hivsim.cp310-win_amd64.pyd -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\hivsim.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\hivsim.dir\linkLibs.rsp
