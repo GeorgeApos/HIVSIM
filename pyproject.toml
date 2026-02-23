@@ -1,0 +1,14 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "hivsim"
+version = "0.1.0"
+description = "HIVSIM simulation core"
+authors = [{name = "George,Apostolis"}]
+requires-python = ">=3.9"
+
+[tool.scikit-build]
+build-dir = "build/{wheel_tag}"
+cmake.verbose = true
