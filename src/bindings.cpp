@@ -2,6 +2,8 @@
 #include "System.hpp"
 #include "kokkos_info.hpp"
 #include <Kokkos_Core.hpp>
+#include "Grid.hpp"
+
 
 namespace py = pybind11;
 
@@ -50,6 +52,19 @@ PYBIND11_MODULE(hivsim_engine, m) {
       double sum = 0.0;
       for (int i=0; i<n; ++i) sum += h(i);
       return sum;
+    });
+
+    py::class_<Grid>(m, "Grid")
+    .def(py::init<int,int,int>())
+    .def("seed_center", &Grid::seed_center)
+    .def("count_healthy", [](const Grid& g){
+        return g.count_state(CellState::HEALTHY);
+    })
+    .def("count_infected", [](const Grid& g){
+        return g.count_state(CellState::INFECTED);
+    })
+    .def("count_dead", [](const Grid& g){
+        return g.count_state(CellState::DEAD);
     });
 }
 
