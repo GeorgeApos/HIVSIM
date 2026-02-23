@@ -6,6 +6,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(FetchContent)
 
+add_compile_options(-fPIC)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+set(Kokkos_ENABLE_PIC ON CACHE BOOL "" FORCE)
+set(Kokkos_ENABLE_SERIAL ON CACHE BOOL "" FORCE)
+
 FetchContent_Declare(
         kokkos
         GIT_REPOSITORY https://github.com/kokkos/kokkos.git
