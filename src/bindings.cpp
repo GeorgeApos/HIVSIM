@@ -1,6 +1,5 @@
 #include <pybind11/pybind11.h>
 #include "System.hpp"
-#include "kokkos_info.hpp"
 #include <Kokkos_Core.hpp>
 
 namespace py = pybind11;
@@ -21,10 +20,6 @@ PYBIND11_MODULE(hivsim_engine, m) {
     m.def("print_authors", [](int year){
         System s;
         py::print(s.authors_string(year));
-    });
-
-    m.def("kokkos_info", [](){
-        return kokkos_info_string();
     });
 
     m.def("kokkos_init", [](){

@@ -26,14 +26,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(pybind11)
 
-pybind11_add_module(hivsim_engine
+pybind11_add_module(hivsim
         src/bindings.cpp
         src/System.cpp
-        src/kokkos_info.cpp
 )
 
-target_include_directories(hivsim_engine PRIVATE
+target_include_directories(hivsim PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-target_link_libraries(hivsim_engine PRIVATE Kokkos::kokkos)
+target_link_libraries(hivsim PRIVATE Kokkos::kokkos)
